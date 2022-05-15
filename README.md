@@ -1,5 +1,5 @@
-# POP_project
-## Structure-based modeling of Cys- and Ser- disease variants of human proteome
+# POP
+## Structure-based modeling of cysteine and serine disease variants of human proteome
 
 ### Motivation
 There are many disease-associated mutations that endow pharmacological target (typically a protein), drug resistance, e.g. G12C amino acid substitution in oncogenic target KRAS.
