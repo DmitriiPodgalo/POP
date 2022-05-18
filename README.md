@@ -19,7 +19,7 @@ The goal of this project is to model structures of human proteins with disease-a
 ### Outcome
 The obtained structural models will be used as the starting conformations for the structure-based drug design pipelines.
 
-## Intro
+## Description
 It is require only python 3 and conda. All the work is done with command line using **bash**. This project use **GRCh37/hg19** human assembly.
 
 There are 4 sections:
