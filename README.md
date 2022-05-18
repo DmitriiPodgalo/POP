@@ -237,10 +237,9 @@ In the begging we had 9362318 variants, after filter we got 1339 variants 100% a
 <a name="REF"/>
 
 ## References
-1. McCarthy, Davis J., et al. "Choice of transcripts and software has a large effect on variant annotation." Genome medicine 6.3 (2014): 1-16.
-2. Barlow, Kyle A., et al. "Flex ddG: Rosetta ensemble-based estimation of changes in protein–protein binding affinity upon mutation." The Journal of Physical Chemistry B 122.21 (2018): 5389-5399.
-3. Koch, Linda. "Exploring human genomic diversity with gnomAD." Nature Reviews Genetics 21.8 (2020): 448-448.
-4. Knight, Steven. "Building software with SCons." Computing in Science & Engineering 7.1 (2005): 79-88.
-5. Jumper, John, et al. "AlphaFold 2." (2020).
-6. Landrum, Melissa J., et al. "ClinVar: public archive of interpretations of clinically relevant variants." Nucleic acids research 44.D1 (2016): D862-D868.
-
+1. Barlow, Kyle A., et al. "Flex ddG: Rosetta ensemble-based estimation of changes in protein–protein binding affinity upon mutation." The Journal of Physical Chemistry B 122.21 (2018): 5389-5399.
+2. Jumper, John, et al. "AlphaFold 2." (2020).
+3. Knight, Steven. "Building software with SCons." Computing in Science & Engineering 7.1 (2005): 79-88.
+4. Koch, Linda. "Exploring human genomic diversity with gnomAD." Nature Reviews Genetics 21.8 (2020): 448-448.
+5. Landrum, Melissa J., et al. "ClinVar: public archive of interpretations of clinically relevant variants." Nucleic acids research 44.D1 (2016): D862-D868.
+6. McCarthy, Davis J., et al. "Choice of transcripts and software has a large effect on variant annotation." Genome medicine 6.3 (2014): 1-16.
