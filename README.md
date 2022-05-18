@@ -28,6 +28,7 @@ There are 3 sections:
 Normal models are in **normal_models** folder. Mutant models are in **mutant_models** folder.
 
 <a name="INSTALL"/>
+
 ## INSTALL DEPENDENCIES
 
 **Install VEP for command line:**
@@ -56,7 +57,9 @@ path/to/rosetta/main/source/scons.py -j40 mode=release extras=cxx11thread bin
 ```
 
 <a name="DOWNLOAD"/>
+
 ## DOWNLOAD
+
 **Get gnomAD 2.1.1 ExAC exomes:**
 ```
 wget https://storage.googleapis.com/gcp-public-data--gnomad/legacy/exac_browser/ExAC.r1.sites.vep.vcf.gz
@@ -81,7 +84,9 @@ wget -c https://ftp.ebi.ac.uk/pub/databases/alphafold/latest/UP000005640_9606_HU
 ```
 
 <a name="LAB"/>
+
 ## LABORATORY JOURNAL (pipeline)
+
 ### Run VEP
 **Run VEP to annotate:**
 ```
