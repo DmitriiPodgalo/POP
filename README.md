@@ -45,6 +45,15 @@ Mutant models are in **mutant_models** folder.
 8. associated disease
 9. link to AlphaFold2 model (look at **normal_models** folder)
 
+**sum.tsv head:**
+```
+HFM1_HUMAN	A2PYH4  <SEQUENCE>  884	I	S	94.26	Premature_ovarian_failure_9	AF-A2PYH4-F1-model_v2.pdb.gz
+TM218_HUMAN	A2RU14	<SEQUENCE>	80	R	C	88.71	Joubert_syndrome	AF-A2RU14-F1-model_v2.pdb.gz
+S38A8_HUMAN	A6NNN8	<SEQUENCE>	32	I	S	89.86	Foveal_hypoplasia	AF-A6NNN8-F1-model_v2.pdb.gz
+GRCR1_HUMAN	A8MXD5	<SEQUENCE>	138	R	C	90.27	Autosomal_recessive_nonsyndromic_hearing_loss_25	AF-A8MXD5-F1-model_v2.pdb.gz
+KBTBD_HUMAN	C9JR72	<SEQUENCE>	248	R	S	97.59	Nemaline_myopathy_6	AF-C9JR72-F1-model_v2.pdb.gz
+```
+
 <a name="INSTALL"/>
 
 ## Statistics
@@ -104,9 +113,13 @@ path/to/rosetta/main/source/scons.py -j40 mode=release extras=cxx11thread bin
 ```
 wget -c -O exac.vcf.gz https://storage.googleapis.com/gcp-public-data--gnomad/legacy/exac_browser/ExAC.r1.sites.vep.vcf.gz
 ```
-exac.vcf.gz head:
+**exac.vcf.gz head:**
 ```
 1       13372   .       G       C       608.91  PASS    <COLUMN WITH ADDITIONAL INFO>
+1       13380   .       C       G       7829.15 VQSRTrancheSNP99.60to99.80  <COLUMN WITH ADDITIONAL INFO>
+1       13382   .       C       G       320.40  VQSRTrancheSNP99.60to99.80  <COLUMN WITH ADDITIONAL INFO>
+1       13402   .       G       C       89.66   VQSRTrancheSNP99.60to99.80  <COLUMN WITH ADDITIONAL INFO>
+1       13417   .       C       CGAGA   258189.04       PASS    <COLUMN WITH ADDITIONAL INFO>
 ```
 
 **Get human database for VEP:**
@@ -120,9 +133,13 @@ tar xzf homo_sapiens_vep_105_GRCh37.tar.gz
 ```
 wget -c https://ftp.ncbi.nlm.nih.gov/pub/clinvar/vcf_GRCh37/clinvar.vcf.gz
 ```
-clinvar.vcf.gz head:
+**clinvar.vcf.gz head:**
 ```
-1       861332  1019397 G       A       .       .   <COLUMN WITH ADDITIONAL INFO>
+1       861332  1019397 G       A       .       .   <DISEASE INFO>
+1       861336  1543320 C       T       .       .   <DISEASE INFO>
+1       861349  1648427 C       T       .       .   <DISEASE INFO>
+1       861356  1362713 T       C       .       .   <DISEASE INFO>
+1       861366  1568423 C       T       .       .   <DISEASE INFO>
 ```
 
 **Get AlphaFold2 database:**
@@ -146,9 +163,13 @@ vep --input_file exac.vcf.gz \
     --uniprot \              # add uniprot id
     --fork 40                # parallel execution
 ```
-exac.vep.gz head:
+**exac.vep.gz head:**
 ```
-1_13372_G/C     1:13372 C       ENSG00000227232 ENST00000438504 Transcript      downstream_gene_variant -       -       -       -       -       -   <COLUMN WITH ADDITIONAL INFO>
+1_13372_G/C     1:13372 C       ENSG00000223972 ENST00000456328 Transcript      non_coding_transcript_exon_variant      620     -       -       -       -       -       IMPACT=MODIFIER;STRAND=1
+1_13372_G/C     1:13372 C       ENSG00000227232 ENST00000488147 Transcript      downstream_gene_variant -       -       -       -       -       -       IMPACT=MODIFIER;DISTANCE=1032;STRAND=-1
+1_13372_G/C     1:13372 C       ENSG00000223972 ENST00000515242 Transcript      non_coding_transcript_exon_variant      613     -       -       -       -       -       IMPACT=MODIFIER;STRAND=1
+1_13372_G/C     1:13372 C       ENSG00000223972 ENST00000518655 Transcript      intron_variant,non_coding_transcript_variant    -       -       -       -       -       -       IMPACT=MODIFIER;STRAND=1
+1_13372_G/C     1:13372 C       ENSG00000227232 ENST00000538476 Transcript      downstream_gene_variant -       -       -       -       -       -       IMPACT=MODIFIER;DISTANCE=1039;STRAND=-1
 ```
 
 **Run VEP for filter:**
@@ -157,7 +178,8 @@ filter_vep --input_file exac.vep.gz \
            --output_file exac.filt.vep \
            --filter "Consequence is missense_variant and (Amino_acids matches /S or Amino_acids matches /C)"
 ```
-exac.filt.vep head:
+
+**exac.filt.vep head:**
 ```
 1_69241_C/T     1:69241 T       ENSG00000186092 ENST00000335137 Transcript      missense_variant        151     151     51      P/S     Ccc/Tcc -       IMPACT=MODERATE;STRAND=1;SWISSPROT=OR4F5_HUMAN;UNIPARC=UPI0000041BC1
 rs140739101     1:69428 G       ENSG00000186092 ENST00000335137 Transcript      missense_variant        338     338     113     F/C     tTt/tGt -       IMPACT=MODERATE;STRAND=1;SWISSPROT=OR4F5_HUMAN;UNIPARC=UPI0000041BC1
@@ -190,15 +212,16 @@ cat exac.filt.pat.columns.vep | cut -f 11 | awk '{FS=";";OFS="\t"} {print $0}' |
 
 **Merge files:**
 ```
-paste uniprac.tsv pos.tsv AC.tsv diseases.tsv > uniprac_pos_AC_diseases.tsv
+paste uniprac.tsv pos.tsv AC.tsv score.tsv diseases.tsv > uniprac_pos_AC_score_diseases.tsv
 ```
-uniprac_pos_AC_diseases.tsv head:
+
+**uniprac_pos_AC_diseases.tsv head:**
 ```
-UPI00000000ED   334     R       C       Neuronal_ceroid_lipofuscinosis_3
-UPI00000000ED   334     R       C       Neuronal_ceroid_lipofuscinosis_3
-UPI00000000ED   334     R       C       Neuronal_ceroid_lipofuscinosis_3
-UPI000000014B   264     P       S       Blue_color_blindness
-UPI0000000239   120     P       S       alpha_Thalassemia
+UPI00000000ED   334     R       C    96.17      Neuronal_ceroid_lipofuscinosis_3
+UPI00000000ED   334     R       C    96.17      Neuronal_ceroid_lipofuscinosis_3
+UPI00000000ED   334     R       C    96.17      Neuronal_ceroid_lipofuscinosis_3
+UPI000000014B   264     P       S    96.14      Blue_color_blindness
+UPI0000000239   120     P       S    98.71      alpha_Thalassemia
 ```
 
 ### Mapping
@@ -211,7 +234,8 @@ ls path/to/alpha_fold/ | grep -v 'cif.gz' | grep -v 'UP000005640' | awk '{FS="-"
 ls ../alpha_fold/ | grep -v 'cif.gz' | grep -v 'UP000005640' > path.tsv
 paste id.tsv path.tsv > id_path.tsv
 ```
-id_path.tsv head:
+
+**id_path.tsv head:**
 ```
 A0A024R1R8      AF-A0A024R1R8-F1-model_v2.pdb.gz
 A0A024RBG1      AF-A0A024RBG1-F1-model_v2.pdb.gz
@@ -226,7 +250,8 @@ sort -k1,1 -o uniprot.tsv uniprot.tsv
 sort -k1,1 -o id_path.tsv id_path.tsv
 join id_path.tsv uniprot.tsv > uniprot_id_path.tsv
 ```
-uniprot_id_path.tsv head:
+
+**uniprot_id_path.tsv head:**
 ```
 P16671  AF-P16671-F1-model_v2.pdb.gz    CD36_HUMAN      UPI0000000C91   <SEQUENCE>
 P51659  AF-P51659-F1-model_v2.pdb.gz    DHB4_HUMAN      UPI0000000C4F   <SEQUENCE>
@@ -242,9 +267,9 @@ cat uniprot_id_path.tsv | awk '{FS=" ";OFS="\t"}{print $1,$2,$3,$4,$5}' > temp.t
 
 **Inner join of files to summary file:**
 ```
-sort -k1,1 -o uniprac_pos_AC_diseases.tsv uniprac_pos_AC_diseases.tsv
+sort -k1,1 -o uniprac_pos_AC_diseases.tsv uniprac_pos_AC_score_diseases.tsv
 sort -k1,1 -o uniprot_id_path.tsv uniprot_id_path.tsv
-join -1 3 -2 1 uniprot_id_path.tsv uniprac_pos_AC_diseases.tsv | awk '{print $3, $2, $4, $5, $6, $7, $8}' | uniq > sum.tsv
+join -1 3 -2 1 uniprot_id_path.tsv uniprac_pos_AC_score_diseases.tsv | awk '{print $3, $2, $4, $5, $6, $7, $8, $9}' | uniq > sum.tsv
 ```
 
 **Remove variants that have not disease:**
@@ -288,6 +313,19 @@ do
         path='path/to/alpha_fold/'`cut -f 8 sum.tsv | sed "$i!d"` # prepare path to normal model
         echo $path                                                # logging
         `cp $path ./norm_models/`                                 # copy the model to the folder
+done
+```
+
+Script to collect AlphaFold2 score to score.tsv:
+```
+#!/bin/bash
+
+for i in $(seq 1 1339);
+do
+        path='../../../alpha_fold/'`cut -f 8 ../sum.tsv | sed "$i!d"`
+        pos=`cat ../sum.tsv | cut -f 4 | sed "$i!d"`
+        echo $path
+        echo `zcat $path | grep '^ATOM' | awk '{print $6, $11}' | uniq | grep "^$pos " | cut -f 2` >> score.tsv
 done
 ```
 
