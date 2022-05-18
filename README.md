@@ -1,6 +1,7 @@
 # POP
 The final project in Bioinformatics Institute.
 
+Student: Dmitrii Podgalo
 Supervisor: Petr Popov, Skoltech.
 
 ## Structure-based modeling of cysteine and serine disease variants of human proteome
@@ -23,7 +24,7 @@ There are 3 sections:
 
 - [INSTALL DEPENDENCIES](#INSTALL) - what to install before work, 
 - [DOWNLOAD](#DOWNLOAD) - what to download before work,
-- [LABORATORY JOURNAL](#LAB) (pipeline) - step-by-step description of this work.
+- [LABORATORY JOURNAL (pipeline)](#LAB) - step-by-step description of this work.
 
 Normal models are in **normal_models** folder. Mutant models are in **mutant_models** folder.
 
