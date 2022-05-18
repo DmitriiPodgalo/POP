@@ -225,7 +225,15 @@ UPI0000000239   120     P       S    98.71      alpha_Thalassemia
 ```
 
 ### Mapping
-Uniprac ID are different from AlphaFold2 ID, so we need map these ID at https://www.uniprot.org/uploadlists/. Just upload uniprac.tsv and choose next features: UniProt, ProteinName, UniParc, Sequence. Then download to uniprot.tsv.
+Uniprac ID are different from AlphaFold2 ID, so we need map these ID at https://www.uniprot.org/uploadlists/. 
+
+Just upload uniprac.tsv and choose next features: 
+- UniProt, 
+- ProteinName, 
+- UniParc, 
+- Sequence. 
+
+Then download to uniprot.tsv.
 
 ### Merge data
 **Get AlphaFold2 models list of id and path:**
