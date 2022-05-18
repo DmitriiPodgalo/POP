@@ -1,4 +1,4 @@
-To do: примеры файлов, ссылки на литературу, добавить альфа скор, загрузить sum.tsv, большая презентация
+To do: примеры файлов, добавить альфа скор, загрузить sum.tsv, большая презентация
 # POP
 The final project in Bioinformatics Institute.
 
@@ -28,6 +28,7 @@ There are 4 sections:
 - [Installation](#INSTALL) - what to install before work, 
 - [Downloads](#DOWNLOAD) - what to download before work,
 - [Laboratory journal (pipeline)](#LAB) - step-by-step description of this work.
+- [References](#REF)
 
 Normal models are in **normal_models** folder. Mutant models are in **mutant_models** folder.
 
@@ -232,3 +233,14 @@ done
 
 ### Conclusion
 In the begging we had 9362318 variants, after filter we got 1339 variants 100% associated with disease. For each of 1339 variants got mutant 3D-model. 
+
+<a name="REF"/>
+
+## References
+1. McCarthy, Davis J., et al. "Choice of transcripts and software has a large effect on variant annotation." Genome medicine 6.3 (2014): 1-16.
+2. Barlow, Kyle A., et al. "Flex ddG: Rosetta ensemble-based estimation of changes in protein–protein binding affinity upon mutation." The Journal of Physical Chemistry B 122.21 (2018): 5389-5399.
+3. Koch, Linda. "Exploring human genomic diversity with gnomAD." Nature Reviews Genetics 21.8 (2020): 448-448.
+4. Knight, Steven. "Building software with SCons." Computing in Science & Engineering 7.1 (2005): 79-88.
+5. Jumper, John, et al. "AlphaFold 2." (2020).
+6. Landrum, Melissa J., et al. "ClinVar: public archive of interpretations of clinically relevant variants." Nucleic acids research 44.D1 (2016): D862-D868.
+
