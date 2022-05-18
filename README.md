@@ -104,6 +104,7 @@ path/to/rosetta/main/source/scons.py -j40 mode=release extras=cxx11thread bin
 ```
 wget -c -O exac.vcf.gz https://storage.googleapis.com/gcp-public-data--gnomad/legacy/exac_browser/ExAC.r1.sites.vep.vcf.gz
 ```
+exac.vcf.gz head:
 ```
 1       13372   .       G       C       608.91  PASS    <COLUMN WITH ADDITIONAL INFO>
 ```
@@ -118,6 +119,10 @@ tar xzf homo_sapiens_vep_105_GRCh37.tar.gz
 **Get clinvar database for VEP:**
 ```
 wget -c https://ftp.ncbi.nlm.nih.gov/pub/clinvar/vcf_GRCh37/clinvar.vcf.gz
+```
+clinvar.vcf.gz head:
+```
+1       861332  1019397 G       A       .       .   <COLUMN WITH ADDITIONAL INFO>
 ```
 
 **Get AlphaFold2 database:**
@@ -141,12 +146,24 @@ vep --input_file exac.vcf.gz \
     --uniprot \              # add uniprot id
     --fork 40                # parallel execution
 ```
+exac.vep.gz head:
+```
+1_13372_G/C     1:13372 C       ENSG00000227232 ENST00000438504 Transcript      downstream_gene_variant -       -       -       -       -       -   <COLUMN WITH ADDITIONAL INFO>
+```
 
 **Run VEP for filter:**
 ```
-filter_vep --input_file exac.evth.vep.gz \
-           --output_file exac.evth.filt.vep \
+filter_vep --input_file exac.vep.gz \
+           --output_file exac.filt.vep \
            --filter "Consequence is missense_variant and (Amino_acids matches /S or Amino_acids matches /C)"
+```
+exac.filt.vep head:
+```
+1_69241_C/T     1:69241 T       ENSG00000186092 ENST00000335137 Transcript      missense_variant        151     151     51      P/S     Ccc/Tcc -       IMPACT=MODERATE;STRAND=1;SWISSPROT=OR4F5_HUMAN;UNIPARC=UPI0000041BC1
+rs140739101     1:69428 G       ENSG00000186092 ENST00000335137 Transcript      missense_variant        338     338     113     F/C     tTt/tGt -       IMPACT=MODERATE;STRAND=1;SWISSPROT=OR4F5_HUMAN;UNIPARC=UPI0000041BC1
+rs150690004     1:69496 A       ENSG00000186092 ENST00000335137 Transcript      missense_variant        406     406     136     G/S     Ggc/Agc -       IMPACT=MODERATE;STRAND=1;SWISSPROT=OR4F5_HUMAN;UNIPARC=UPI0000041BC1
+1_69523_G/T     1:69523 T       ENSG00000186092 ENST00000335137 Transcript      missense_variant        433     433     145     G/C     Ggc/Tgc -       IMPACT=MODERATE;STRAND=1;SWISSPROT=OR4F5_HUMAN;UNIPARC=UPI0000041BC1
+1_69634_T/A     1:69634 A       ENSG00000186092 ENST00000335137 Transcript      missense_variant        544     544     182     C/S     Tgt/Agt -       IMPACT=MODERATE;STRAND=1;SWISSPROT=OR4F5_HUMAN;UNIPARC=UPI0000041BC1
 ```
 
 We chose only missense variant with substitution to serine or cysteine amino acid.
@@ -175,6 +192,14 @@ cat exac.filt.pat.columns.vep | cut -f 11 | awk '{FS=";";OFS="\t"} {print $0}' |
 ```
 paste uniprac.tsv pos.tsv AC.tsv diseases.tsv > uniprac_pos_AC_diseases.tsv
 ```
+uniprac_pos_AC_diseases.tsv head:
+```
+UPI00000000ED   334     R       C       Neuronal_ceroid_lipofuscinosis_3
+UPI00000000ED   334     R       C       Neuronal_ceroid_lipofuscinosis_3
+UPI00000000ED   334     R       C       Neuronal_ceroid_lipofuscinosis_3
+UPI000000014B   264     P       S       Blue_color_blindness
+UPI0000000239   120     P       S       alpha_Thalassemia
+```
 
 ### Mapping
 Uniprac ID are different from AlphaFold2 ID, so we need map these ID at https://www.uniprot.org/uploadlists/. Just upload uniprac.tsv and choose next features: UniProt, ProteinName, UniParc, Sequence. Then download to uniprot.tsv.
@@ -186,12 +211,28 @@ ls path/to/alpha_fold/ | grep -v 'cif.gz' | grep -v 'UP000005640' | awk '{FS="-"
 ls ../alpha_fold/ | grep -v 'cif.gz' | grep -v 'UP000005640' > path.tsv
 paste id.tsv path.tsv > id_path.tsv
 ```
+id_path.tsv head:
+```
+A0A024R1R8      AF-A0A024R1R8-F1-model_v2.pdb.gz
+A0A024RBG1      AF-A0A024RBG1-F1-model_v2.pdb.gz
+A0A024RCN7      AF-A0A024RCN7-F1-model_v2.pdb.gz
+A0A075B6H5      AF-A0A075B6H5-F1-model_v2.pdb.gz
+A0A075B6H7      AF-A0A075B6H7-F1-model_v2.pdb.gz
+```
 
 **Inner join uniprot id and AlphaFold2 id and path:**
 ```
 sort -k1,1 -o uniprot.tsv uniprot.tsv
 sort -k1,1 -o id_path.tsv id_path.tsv
-join uniprot.tsv id_path.tsv > uniprot_id_path.tsv
+join id_path.tsv uniprot.tsv > uniprot_id_path.tsv
+```
+uniprot_id_path.tsv head:
+```
+P16671  AF-P16671-F1-model_v2.pdb.gz    CD36_HUMAN      UPI0000000C91   <SEQUENCE>
+P51659  AF-P51659-F1-model_v2.pdb.gz    DHB4_HUMAN      UPI0000000C4F   <SEQUENCE>
+Q15582  AF-Q15582-F1-model_v2.pdb.gz    BGH3_HUMAN      UPI0000000C6A   <SEQUENCE>
+P15559  AF-P15559-F1-model_v2.pdb.gz    NQO1_HUMAN      UPI0000000C86   <SEQUENCE>
+P16671  AF-P16671-F1-model_v2.pdb.gz    CD36_HUMAN      UPI0000000C91   <SEQUENCE>
 ```
 
 **Choose columns and set delimiter as "\t":**
