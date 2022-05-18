@@ -112,7 +112,9 @@ cat exac.filt.pat.columns.vep | cut -f 11 | awk '{FS=";";OFS="\t"} {print $0}' |
 ```
 
 **Merge files:**
-`paste uniprac.tsv pos.tsv AC.tsv diseases.tsv > uniprac_pos_AC_diseases.tsv`
+```
+paste uniprac.tsv pos.tsv AC.tsv diseases.tsv > uniprac_pos_AC_diseases.tsv
+```
 
 ### Mapping
 Uniprac ID are different from AlphaFold2 ID, so we need map these ID at https://www.uniprot.org/uploadlists/. Just upload uniprac.tsv and choose next features: UniProt, ProteinName, UniParc, Sequence. Then download to uniprot.tsv.
@@ -133,7 +135,9 @@ join uniprot.tsv id_path.tsv > uniprot_id_path.tsv
 ```
 
 **Choose columns and set delimiter as "\t":**
-`cat uniprot_id_path.tsv | awk '{FS=" ";OFS="\t"}{print $1,$2,$3,$4,$5}' > temp.tsv && mv temp.tsv uniprot_id_path.tsv`
+```
+cat uniprot_id_path.tsv | awk '{FS=" ";OFS="\t"}{print $1,$2,$3,$4,$5}' > temp.tsv && mv temp.tsv uniprot_id_path.tsv
+```
 
 **Inner join of files to summary file:**
 ```
@@ -143,7 +147,9 @@ join -1 3 -2 1 uniprot_id_path.tsv uniprac_pos_AC_diseases.tsv | awk '{print $3,
 ```
 
 **Remove variants that have not disease:**
-`cat sum.tsv | grep -v 'not_\w*' > temp.tsv | mv temp.tsv sum.tsv`
+```
+cat sum.tsv | grep -v 'not_\w*' > temp.tsv | mv temp.tsv sum.tsv
+```
 
 ### Rosetta ddg_monomer
 Used .sh script:
