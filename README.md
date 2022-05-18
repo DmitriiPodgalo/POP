@@ -33,7 +33,7 @@ Normal models are in **normal_models** folder. Mutant models are in **mutant_mod
 <a name="INSTALL"/>
 
 ## STATISTICS
-
+Some statistics from result file **sum.tsv**.
 
 <img src="https://raw.github.com/DmitriiPodgalo/POP/main/1.png" alt="drawing" width="500"/>
 
