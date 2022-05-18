@@ -22,13 +22,14 @@ It is require only python 3 and conda. All the work is done with command line us
 There are 3 sections:
 
 - [INSTALL DEPENDENCIES](#INSTALL) - what to install before work, 
-- DOWNLOAD - what to download before work,
-- LABORATORY JOURNAL (pipeline) - step-by-step description of this work.
+- [DOWNLOAD](#DOWNLOAD) - what to download before work,
+- [LABORATORY JOURNAL](#LAB) (pipeline) - step-by-step description of this work.
 
 Normal models are in **normal_models** folder. Mutant models are in **mutant_models** folder.
 
 <a name="INSTALL"/>
 ## INSTALL DEPENDENCIES
+
 **Install VEP for command line:**
 ```
 conda install -c bioconda ensembl-vep
@@ -54,6 +55,7 @@ tar -xvzf rosetta.tgz
 path/to/rosetta/main/source/scons.py -j40 mode=release extras=cxx11thread bin
 ```
 
+<a name="DOWNLOAD"/>
 ## DOWNLOAD
 **Get gnomAD 2.1.1 ExAC exomes:**
 ```
@@ -78,6 +80,7 @@ wget -c https://ftp.ncbi.nlm.nih.gov/pub/clinvar/vcf_GRCh37/clinvar.vcf.gz
 wget -c https://ftp.ebi.ac.uk/pub/databases/alphafold/latest/UP000005640_9606_HUMAN_v2.tar
 ```
 
+<a name="LAB"/>
 ## LABORATORY JOURNAL (pipeline)
 ### Run VEP
 **Run VEP to annotate:**
