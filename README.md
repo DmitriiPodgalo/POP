@@ -104,7 +104,9 @@ path/to/rosetta/main/source/scons.py -j40 mode=release extras=cxx11thread bin
 ```
 wget -c -O exac.vcf.gz https://storage.googleapis.com/gcp-public-data--gnomad/legacy/exac_browser/ExAC.r1.sites.vep.vcf.gz
 ```
-> 1       13372   .       G       C       608.91  PASS    <COLUMN WITH ADDITIONAL INFO>
+```
+1       13372   .       G       C       608.91  PASS    <COLUMN WITH ADDITIONAL INFO>
+```
 
 **Get human database for VEP:**
 ```
