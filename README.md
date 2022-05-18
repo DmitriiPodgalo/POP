@@ -213,6 +213,8 @@ cat sum.tsv | grep -v 'not_\w*' > temp.tsv | mv temp.tsv sum.tsv
 ### Rosetta ddg_monomer
 Used .sh script:
 ```
+#!/bin/bash
+
 pre_mut='total 1
 1
 '
@@ -237,6 +239,8 @@ done
 ### Summary
 Script to collect normal models:
 ```
+#!/bin/bash
+
 for i in $(seq 1 1339);
 do
         path='path/to/alpha_fold/'`cut -f 8 sum.tsv | sed "$i!d"` # prepare path to normal model
