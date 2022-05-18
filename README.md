@@ -34,7 +34,10 @@ Normal models are in **normal_models** folder. Mutant models are in **mutant_mod
 
 ## STATISTICS
 
+<figure>
 <img src="https://raw.github.com/DmitriiPodgalo/POP/main/1.png" alt="drawing" width="500" height="350"/>
+<figcaption>Caption goes here</figcaption>
+</figure>
 <img src="https://raw.github.com/DmitriiPodgalo/POP/main/2.png" alt="drawing" width="500" height="350"/>
 <img src="https://raw.github.com/DmitriiPodgalo/POP/main/3.png" alt="drawing" width="500" height="350"/>
 <img src="https://raw.github.com/DmitriiPodgalo/POP/main/4.png" alt="drawing" width="500" height="350"/>
