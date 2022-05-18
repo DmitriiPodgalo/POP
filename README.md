@@ -1,5 +1,6 @@
 # POP
-The final project in Bioinformatics Institute. Supervisor: Petr Popov, Skoltech.
+The final project in Bioinformatics Institute. 
+Supervisor: Petr Popov, Skoltech.
 
 ## Structure-based modeling of cysteine and serine disease variants of human proteome
 
@@ -34,11 +35,13 @@ python setup.py install
 ```
 
 **Then tar rosetta archive:**
-```tar -xvzf rosetta.tgz
+```
+tar -xvzf rosetta.tgz
 ```
 
 **Get to rosetta path and run:**
-```path/to/rosetta/main/source/scons.py -j40 mode=release extras=cxx11thread bin
+```
+path/to/rosetta/main/source/scons.py -j40 mode=release extras=cxx11thread bin
 ```
 
 ## DOWNLOAD
