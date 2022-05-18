@@ -1,4 +1,4 @@
-To do: примеры файлов, добавить альфа скор, загрузить sum.tsv, большая презентация
+To do: примеры файлов, добавить альфа скор, загрузить sum.tsv
 # POP
 The final project in Bioinformatics Institute.
 
@@ -30,7 +30,21 @@ There are 4 sections:
 - [Laboratory journal (pipeline)](#LAB) - step-by-step description of this work.
 - [References](#REF)
 
-Normal models are in **normal_models** folder. Mutant models are in **mutant_models** folder.
+Normal models are in **normal_models** folder. 
+
+Mutant models are in **mutant_models** folder.
+
+**sum.tsv** contains the project summary:
+
+1. protein name
+2. uniprot id
+3. normal sequence
+4. mutant position
+5. normal amino acid
+6. mutant amino acid
+7. AlphaFold2 score for this position
+8. associated disease
+9. link to AlphaFold2 model (look at **normal_models** folder)
 
 <a name="INSTALL"/>
 
