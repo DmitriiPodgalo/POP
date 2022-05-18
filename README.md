@@ -1,4 +1,6 @@
-# POP 
+# POP
+The final project in Bioinformatics Institute. Supervisor: Petr Popov, Skoltech.
+
 ## Structure-based modeling of cysteine and serine disease variants of human proteome
 
 ### Motivation
@@ -17,9 +19,9 @@ It is require only python 3 and conda. All the work is done with command line. T
 
 ## INSTALL DEPENDENCIES
 **Install VEP for command line:**
-`conda install -c bioconda ensembl-vep`
-
-
+```
+conda install -c bioconda ensembl-vep
+```
 **Download Rosetta from (lisence required):**
 https://www.rosettacommons.org/software/license-and-download
 
@@ -27,13 +29,17 @@ https://www.rosettacommons.org/software/license-and-download
 https://scons.org
 
 **Get to scons folder and run:**
-`python setup.py install`
+```
+python setup.py install
+```
 
 **Then tar rosetta archive:**
-`tar -xvzf rosetta.tgz`
+```tar -xvzf rosetta.tgz
+```
 
 **Get to rosetta path and run:**
-`path/to/rosetta/main/source/scons.py -j40 mode=release extras=cxx11thread bin`
+```path/to/rosetta/main/source/scons.py -j40 mode=release extras=cxx11thread bin
+```
 
 ## DOWNLOAD
 **Get gnomAD 2.1.1 ExAC exomes:**
