@@ -208,7 +208,7 @@ do
         path='path/to/alpha_fold/'`cut -f 8 sum.tsv | sed "$i!d"`                           # prepare path to normal model
         name=`cut -f 2 sum.tsv | sed "$i!d"`'_mut.pdb'                                      # name for saving
         echo $path
-        `../rosetta_bin_linux_2021.16.61629_bundle/main/source/bin/ddg_monomer.cxx11thread.linuxgccrelease -in:file:s $path -ddg::mut_file mut_file.txt -multithreading:total_threads 40`                                                            # execute rosetta
+        `../rosetta_bin_linux_2021.16.61629_bundle/main/source/bin/ddg_monomer.cxx11thread.linuxgccrelease -in:file:s $path -ddg::mut_file mut_file.txt -multithreading:total_threads 40` # execute rosetta
         `rm repacked*`
         `rm *1.pdb *2.pdb`
         `rm *out mutant_traj* wt_traj`
