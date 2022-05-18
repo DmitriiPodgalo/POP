@@ -34,7 +34,10 @@ Normal models are in **normal_models** folder. Mutant models are in **mutant_mod
 
 ## STATISTICS
 
-
+![ScreenShot](https://raw.github.com/DmitriiPodgalo/POP/main/proteins.png) 
+![ScreenShot](https://raw.github.com/DmitriiPodgalo/POP/main/norm_ac.png)
+![ScreenShot](https://raw.github.com/DmitriiPodgalo/POP/main/mut_ac.png)
+![ScreenShot](https://raw.github.com/DmitriiPodgalo/POP/main/diseases.png)
 
 
 <a name="INSTALL"/>
