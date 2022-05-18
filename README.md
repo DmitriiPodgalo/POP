@@ -118,12 +118,12 @@ wget -c https://ftp.ebi.ac.uk/pub/databases/alphafold/latest/UP000005640_9606_HU
 ```
 vep --input_file exac.vcf.gz \
     --output_file exac.vep.gz \
-    --compress_output gzip \
-    --offline \
-    --GRCh37 \
-    --custom clinvar.vcf.gz,ClinVar,vcf,exact,0,CLNSIG,CLNREVSTAT,CLNDN,CLNDNINCL,CLNDISDB,CLNDISDBINCL,CLNSIGCONF,CLNSIGINCL,CLNVC,RS \
-    --uniprot \
-    --fork 40
+    --compress_output gzip \ # compress results
+    --offline \              # use local database
+    --GRCh37 \               # use GRCh37 human assembly
+    --custom clinvar.vcf.gz,ClinVar,vcf,exact,0,CLNSIG,CLNREVSTAT,CLNDN,CLNDNINCL,CLNDISDB,CLNDISDBINCL,CLNSIGCONF,CLNSIGINCL,CLNVC,RS \ # use clinvar
+    --uniprot \              # add uniprot id
+    --fork 40                # parallel execution
 ```
 
 **Run VEP for filter:**
@@ -204,17 +204,18 @@ pre_mut='total 1
 
 for i in $(seq 1 1339);
 do
-        echo "$pre_mut"`cat sum.tsv | awk '{print $5, $4, $6}' | sed "$i!d"` > mut_file.txt
-        path='path/to/alpha_fold/'`cut -f 8 sum.tsv | sed "$i!d"`
-        name=`cut -f 2 sum.tsv | sed "$i!d"`'_mut.pdb'
+        echo "$pre_mut"`cat sum.tsv | awk '{print $5, $4, $6}' | sed "$i!d"` > mut_file.txt # write mut_file
+        path='path/to/alpha_fold/'`cut -f 8 sum.tsv | sed "$i!d"`                           # prepare path to normal model
+        name=`cut -f 2 sum.tsv | sed "$i!d"`'_mut.pdb'                                      # name for saving
         echo $path
-        `../rosetta_bin_linux_2021.16.61629_bundle/main/source/bin/ddg_monomer.cxx11thread.linuxgccrelease -in:file:s $path -ddg::mut_file mut_file.txt -multithreading:total_threads 40`
+        `../rosetta_bin_linux_2021.16.61629_bundle/main/source/bin/ddg_monomer.cxx11thread.linuxgccrelease -in:file:s $path -ddg::mut_file mut_file.txt -multithreading:total_threads 40`                                                            # execute rosetta
         `rm repacked*`
         `rm *1.pdb *2.pdb`
         `rm *out mutant_traj* wt_traj`
         `mv *3.pdb mut_models/$name`
         `gzip mut_models/$name`
         echo "Model $i done"
+        # above - remove draft files and move model to the folder
 done
 ```
 
