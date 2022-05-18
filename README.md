@@ -35,12 +35,24 @@ Normal models are in **normal_models** folder. Mutant models are in **mutant_mod
 ## STATISTICS
 
 <figure>
-<img src="https://raw.github.com/DmitriiPodgalo/POP/main/1.png" alt="drawing" width="500" height="350"/>
-<figcaption>Caption goes here</figcaption>
+<img src="https://raw.github.com/DmitriiPodgalo/POP/main/1.png" alt="drawing" width="500"/>
+<figcaption>Proteins distribution</figcaption>
 </figure>
-<img src="https://raw.github.com/DmitriiPodgalo/POP/main/2.png" alt="drawing" width="500" height="350"/>
-<img src="https://raw.github.com/DmitriiPodgalo/POP/main/3.png" alt="drawing" width="500" height="350"/>
-<img src="https://raw.github.com/DmitriiPodgalo/POP/main/4.png" alt="drawing" width="500" height="350"/>
+
+<figure>
+<img src="https://raw.github.com/DmitriiPodgalo/POP/main/2.png" alt="drawing" width="500"/>
+<figcaption>Normal amino acid distribution</figcaption>
+</figure>
+
+<figure>
+<img src="https://raw.github.com/DmitriiPodgalo/POP/main/3.png" alt="drawing" width="500"/>
+<figcaption>Mutant amino acid distribution</figcaption>
+</figure>
+
+<figure>
+<img src="https://raw.github.com/DmitriiPodgalo/POP/main/4.png" alt="drawing" width="500"/>
+<figcaption>Diseases distribution</figcaption>
+</figure>
 
 
 
