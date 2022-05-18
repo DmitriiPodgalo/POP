@@ -21,13 +21,13 @@ It is require only python 3 and conda. All the work is done with command line us
 
 There are 3 sections:
 
-- INSTALL DEPENDENCIES - what to install before work, 
+- [INSTALL DEPENDENCIES](#INSTALL) - what to install before work, 
 - DOWNLOAD - what to download before work,
 - LABORATORY JOURNAL (pipeline) - step-by-step description of this work.
 
 Normal models are in **normal_models** folder. Mutant models are in **mutant_models** folder.
 
-
+<a name="INSTALL"/>
 ## INSTALL DEPENDENCIES
 **Install VEP for command line:**
 ```
