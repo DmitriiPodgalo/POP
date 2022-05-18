@@ -18,21 +18,21 @@ The goal of this project is to model structures of human proteins with disease-a
 ### Outcome
 The obtained structural models will be used as the starting conformations for the structure-based drug design pipelines.
 
-## Into
+## Intro
 It is require only python 3 and conda. All the work is done with command line using **bash**. This project use **GRCh37/hg19** human assembly.
 
 There are 4 sections:
 
-- [STATISTICS](#STAT) - some facts from results,
-- [INSTALL DEPENDENCIES](#INSTALL) - what to install before work, 
-- [DOWNLOAD](#DOWNLOAD) - what to download before work,
-- [LABORATORY JOURNAL (pipeline)](#LAB) - step-by-step description of this work.
+- [Statistics](#STAT) - some facts from results,
+- [Installation](#INSTALL) - what to install before work, 
+- [Downloads](#DOWNLOAD) - what to download before work,
+- [Laboratory journal (pipeline)](#LAB) - step-by-step description of this work.
 
 Normal models are in **normal_models** folder. Mutant models are in **mutant_models** folder.
 
 <a name="INSTALL"/>
 
-## STATISTICS
+## Statistics
 Some statistics from result file **sum.tsv**.
 
 <img src="https://raw.github.com/DmitriiPodgalo/POP/main/1.png" alt="drawing" width="500"/>
@@ -54,7 +54,7 @@ Diseases distribution
 
 <a name="INSTALL"/>
 
-## INSTALL DEPENDENCIES
+## Installation
 
 **Install VEP for command line:**
 ```
@@ -83,7 +83,7 @@ path/to/rosetta/main/source/scons.py -j40 mode=release extras=cxx11thread bin
 
 <a name="DOWNLOAD"/>
 
-## DOWNLOAD
+## Downloads
 
 **Get gnomAD 2.1.1 ExAC exomes:**
 ```
@@ -110,7 +110,7 @@ wget -c https://ftp.ebi.ac.uk/pub/databases/alphafold/latest/UP000005640_9606_HU
 
 <a name="LAB"/>
 
-## LABORATORY JOURNAL (pipeline)
+## Laboratory journal (pipeline)
 
 ### Run VEP
 **Run VEP to annotate:**
