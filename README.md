@@ -19,21 +19,26 @@ It is require only python 3 and conda. All the work is done with command line. T
 **Install VEP for command line:**
 `conda install -c bioconda ensembl-vep`
 
+
 **Download Rosetta from (lisence required):**
 https://www.rosettacommons.org/software/license-and-download
+
 **For Rosetta need SCons**:
 https://scons.org
+
 **Get to scons folder and run:**
 `python setup.py install`
+
 **Then tar rosetta archive:**
 `tar -xvzf rosetta.tgz`
+
 **Get to rosetta path and run:**
 `path/to/rosetta/main/source/scons.py -j40 mode=release extras=cxx11thread bin`
 
 ## DOWNLOAD
 **Get gnomAD 2.1.1 ExAC exomes:**
-```wget https://storage.googleapis.com/gcp-public-data--gnomad/legacy/exac_browser/ExAC.r1.sites.vep.vcf.gz
-gunzip -c exac.vcf ExAC.r1.sites.vep.vcf.gz```
+`wget https://storage.googleapis.com/gcp-public-data--gnomad/legacy/exac_browser/ExAC.r1.sites.vep.vcf.gz
+gunzip -c exac.vcf ExAC.r1.sites.vep.vcf.gz`
 
 **Get human database for VEP:**
 ```cd $HOME/.vep
