@@ -312,7 +312,7 @@ done
 ```
 
 ### Summary
-Script to collect normal models:
+Script to collect normal models to **normal_models** folder:
 ```
 #!/bin/bash
 
