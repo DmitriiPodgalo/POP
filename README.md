@@ -1,3 +1,4 @@
+To do: описание ключей, примеры файлов, ссылки на литературу, добавить альфа скор, загрузить sum.tsv, большая презентация
 # POP
 The final project in Bioinformatics Institute.
 
