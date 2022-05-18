@@ -47,7 +47,7 @@ Mutant models are in **mutant_models** folder.
 
 **sum.tsv head:**
 ```
-HFM1_HUMAN	A2PYH4  <SEQUENCE>  884	I	S	94.26	Premature_ovarian_failure_9	AF-A2PYH4-F1-model_v2.pdb.gz
+HFM1_HUMAN	A2PYH4  <SEQUENCE>  884 I	S	94.26	Premature_ovarian_failure_9 AF-A2PYH4-F1-model_v2.pdb.gz
 TM218_HUMAN	A2RU14	<SEQUENCE>	80	R	C	88.71	Joubert_syndrome	AF-A2RU14-F1-model_v2.pdb.gz
 S38A8_HUMAN	A6NNN8	<SEQUENCE>	32	I	S	89.86	Foveal_hypoplasia	AF-A6NNN8-F1-model_v2.pdb.gz
 GRCR1_HUMAN	A8MXD5	<SEQUENCE>	138	R	C	90.27	Autosomal_recessive_nonsyndromic_hearing_loss_25	AF-A8MXD5-F1-model_v2.pdb.gz
