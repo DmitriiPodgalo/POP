@@ -16,15 +16,16 @@ The goal of this project is to model structures of human proteins with disease-a
 ### Outcome
 The obtained structural models will be used as the starting conformations for the structure-based drug design pipelines.
 
-## Deafult dependencies
-It is require only python 3 and conda. All the work is done with command line. This project use GRCh37/hg19 human assembly.
-
+## Into
+It is require only python 3 and conda. All the work is done with command line using **bash**. This project use **GRCh37/hg19** human assembly.
 
 There are 3 sections:
 
 - INSTALL DEPENDENCIES - what to install before work, 
 - DOWNLOAD - what to download before work,
-- LABORATORY JOURNAL - laboratory journal (pipeline).
+- LABORATORY JOURNAL (pipeline) - step-by-step description of this work.
+
+Normal models are in **normal_models** folder. Mutant models are in **mutant_models** folder.
 
 
 ## INSTALL DEPENDENCIES
@@ -77,7 +78,7 @@ wget -c https://ftp.ncbi.nlm.nih.gov/pub/clinvar/vcf_GRCh37/clinvar.vcf.gz
 wget -c https://ftp.ebi.ac.uk/pub/databases/alphafold/latest/UP000005640_9606_HUMAN_v2.tar
 ```
 
-## LABORATORY JOURNAL
+## LABORATORY JOURNAL (pipeline)
 ### Run VEP
 **Run VEP to annotate:**
 ```
@@ -100,7 +101,7 @@ filter_vep --input_file exac.evth.vep.gz \
 
 We chose only missense variant with substitution to serine or cysteine amino acid.
 
-### Hands filter
+### Hand filter
 **Choose variants that 100% associated with disease:**
 ```
 cat exac.filt.vep | grep -v '^##' | grep 'CLNSIG=Pathogenic' | cut --complement -f 6,7,13 > exac.filt.pat.columns.vep
@@ -196,15 +197,3 @@ done
 
 ### Conclusion
 In the begging we had 9362318 variants, after filter we got 1339 variants 100% associated with disease. For each of 1339 variants got mutant 3D-model. 
-
-
-
-
-
-
-
-
-
-
-
-
