@@ -1,5 +1,6 @@
 # POP
-The final project in Bioinformatics Institute. 
+The final project in Bioinformatics Institute.
+
 Supervisor: Petr Popov, Skoltech.
 
 ## Structure-based modeling of cysteine and serine disease variants of human proteome
@@ -17,6 +18,14 @@ The obtained structural models will be used as the starting conformations for th
 
 ## Deafult dependencies
 It is require only python 3 and conda. All the work is done with command line. This project use GRCh37/hg19 human assembly.
+
+
+There are 3 sections:
+
+- INSTALL DEPENDENCIES - what to install before work, 
+- DOWNLOAD - what to download before work,
+- LABORATORY JOURNAL - laboratory journal (pipeline).
+
 
 ## INSTALL DEPENDENCIES
 **Install VEP for command line:**
