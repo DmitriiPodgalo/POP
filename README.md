@@ -21,13 +21,13 @@ The obtained structural models will be used as the starting conformations for th
 ## Description
 It is require only python 3 and conda. All the work is done with command line using **bash**. This project use **GRCh37/hg19** human assembly.
 
-There are 4 sections:
+There are 5 sections:
 
 - [Statistics](#STAT) - some facts from results,
 - [Installation](#INSTALL) - what to install before work, 
 - [Downloads](#DOWNLOAD) - what to download before work,
-- [Laboratory journal (pipeline)](#LAB) - step-by-step description of this work.
-- [References](#REF)
+- [Laboratory journal (pipeline)](#LAB) - step-by-step description of this work,
+- [References](#REF).
 
 Normal models are in **normal_models** folder. 
 
