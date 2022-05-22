@@ -1,9 +1,9 @@
 # POP
-The final project in Bioinformatics Institute.
+The final project in Bioinformatics Institute
 
 Student: Dmitrii Podgalo
 
-Supervisor: Petr Popov, Skoltech.
+Supervisor: Petr Popov, Skoltech
 
 ## Structure-based modeling of cysteine and serine disease variants of human proteome
 
