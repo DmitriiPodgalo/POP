@@ -32,6 +32,8 @@ Normal models are in **normal_models** folder.
 
 Mutant models are in **mutant_models** folder.
 
+Bash scripts are in **scripts** folder.
+
 **sum.tsv** contains the project summary:
 
 1. protein name
@@ -151,7 +153,7 @@ wget -c https://ftp.ebi.ac.uk/pub/databases/alphafold/latest/UP000005640_9606_HU
 ## Laboratory journal (pipeline)
 
 ### Run VEP
-**Run VEP to annotate:**
+**Run VEP to annotate (vep_annotate.sh):** 
 ```
 vep --input_file exac.vcf.gz \
     --output_file exac.vep.gz \
@@ -171,7 +173,7 @@ vep --input_file exac.vcf.gz \
 1_13372_G/C     1:13372 C       ENSG00000227232 ENST00000538476 Transcript      downstream_gene_variant -       -       -       -       -       -       IMPACT=MODIFIER;DISTANCE=1039;STRAND=-1
 ```
 
-**Run VEP for filter:**
+**Run VEP for filter (vep_filter.sh):**
 ```
 filter_vep --input_file exac.vep.gz \
            --output_file exac.filt.vep \
@@ -285,7 +287,7 @@ cat sum.tsv | grep -v 'not_\w*' > temp.tsv | mv temp.tsv sum.tsv
 ```
 
 ### Rosetta ddg_monomer
-Used .sh script:
+Used .sh script (**rosetta_model.sh**):
 ```
 #!/bin/bash
 
@@ -311,7 +313,7 @@ done
 ```
 
 ### Summary
-Script to collect normal models to **normal_models** folder:
+Script to collect normal models to **normal_models** folder (**collect_normal_models.sh**):
 ```
 #!/bin/bash
 
@@ -323,7 +325,7 @@ do
 done
 ```
 
-Script to collect AlphaFold2 score to score.tsv:
+Script to collect AlphaFold2 score to score.tsv (**coolect_alpha_score.sh**):
 ```
 #!/bin/bash
 
