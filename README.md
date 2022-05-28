@@ -18,7 +18,7 @@ The goal of this project is to model structures of human proteins with disease-a
 The obtained structural models will be used as the starting conformations for the structure-based drug design pipelines.
 
 ## Description
-It is require only python 3 and conda.
+It is require only python 3 and conda (conda installation is below).
 
 All the work is done with command line using **bash**. 
 
