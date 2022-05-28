@@ -1,11 +1,10 @@
-# POP
+# Structure-based modeling of cysteine and serine disease variants of human proteome
+
 The final project in Bioinformatics Institute
 
 Student: Dmitrii Podgalo
 
 Supervisor: Petr Popov, Skoltech
-
-## Structure-based modeling of cysteine and serine disease variants of human proteome
 
 ### Motivation
 There are many disease-associated mutations that endow pharmacological target (typically a protein), drug resistance, e.g. G12C amino acid substitution in oncogenic target KRAS.
