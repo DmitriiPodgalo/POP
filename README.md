@@ -18,7 +18,11 @@ The goal of this project is to model structures of human proteins with disease-a
 The obtained structural models will be used as the starting conformations for the structure-based drug design pipelines.
 
 ## Description
-It is require only python 3 and conda. All the work is done with command line using **bash**. This project use **GRCh37/hg19** human assembly.
+It is require only python 3 and conda.
+
+All the work is done with command line using **bash**. 
+
+This project use **GRCh37/hg19** human assembly.
 
 There are 5 sections:
 
@@ -80,6 +84,13 @@ Diseases distribution
 <a name="INSTALL"/>
 
 ## Installation
+
+**Install conda:**
+
+```
+wget <choose a version from https://docs.conda.io/en/latest/miniconda.html#linux-installers>
+bash Miniconda3-latest-Linux-x86_64.sh
+```
 
 **Install VEP for command line:**
 ```
