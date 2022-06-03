@@ -356,8 +356,13 @@ In the begging we had 9362318 variants, after filter we got 1339 variants 100% a
 
 ## References
 1. Barlow, Kyle A., et al. "Flex ddG: Rosetta ensemble-based estimation of changes in protein–protein binding affinity upon mutation." The Journal of Physical Chemistry B 122.21 (2018): 5389-5399.
-2. Jumper, John, et al. "AlphaFold 2." (2020).
-3. Knight, Steven. "Building software with SCons." Computing in Science & Engineering 7.1 (2005): 79-88.
-4. Koch, Linda. "Exploring human genomic diversity with gnomAD." Nature Reviews Genetics 21.8 (2020): 448-448.
-5. Landrum, Melissa J., et al. "ClinVar: public archive of interpretations of clinically relevant variants." Nucleic acids research 44.D1 (2016): D862-D868.
-6. McCarthy, Davis J., et al. "Choice of transcripts and software has a large effect on variant annotation." Genome medicine 6.3 (2014): 1-16.
+2. Cohen, Nissim Claude. "Structure-based drug design and the discovery of aliskiren (Tekturna): perseverance and creativity to overcome a R&D pipeline challenge." Chemical biology & drug design 70.6 (2007): 557-565.
+3. Grüning, Björn, et al. "Bioconda: sustainable and comprehensive software distribution for the life sciences." Nature methods 15.7 (2018): 475-476.
+4. Jumper, John, et al. "AlphaFold 2." (2020).
+5. Knight, Steven. "Building software with SCons." Computing in Science & Engineering 7.1 (2005): 79-88.
+6. Koch, Linda. "Exploring human genomic diversity with gnomAD." Nature Reviews Genetics 21.8 (2020): 448-448.
+7. Landrum, Melissa J., et al. "ClinVar: public archive of interpretations of clinically relevant variants." Nucleic acids research 44.D1 (2016): D862-D868.
+8. Li, Biao, et al. "Automated inference of molecular mechanisms of disease from amino acid substitutions." Bioinformatics25.21 (2009): 2744-2750.
+9. Lievre, Astrid, et al. "KRAS mutation status is predictive of response to cetuximab therapy in colorectal cancer." Cancer research 66.8 (2006): 3992-3995.
+10. McCarthy, Davis J., et al. "Choice of transcripts and software has a large effect on variant annotation." Genome medicine 6.3 (2014): 1-16.
+11. Pundir, Sangya, et al. "UniProt tools." Current protocols in bioinformatics 53.1 (2016): 1-29.
